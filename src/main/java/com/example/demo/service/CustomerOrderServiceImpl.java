@@ -19,7 +19,7 @@ public class CustomerOrderServiceImpl implements CustomerOrderService {
 
     @Override
     public CustomerOrder createOrder(String customerEmail, String customerAddress, Date orderDate, List<OrderItem> items) {
-        CustomerOrder customerOrder = new CustomerOrder(null, customerEmail, customerAddress, orderDate, items);
+        CustomerOrder customerOrder = new CustomerOrder(customerEmail, customerAddress, orderDate, items);
         return customerOrderRepository.save(customerOrder);
     }
 
